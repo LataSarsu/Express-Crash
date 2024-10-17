@@ -6,7 +6,7 @@ const form = document.querySelector("#add-post-form");
 // Get and show posts
 async function showPosts() {
     try {
-        const res = await fetch('https://port8000-workspaces-ws-k2ntr.us10.trial.applicationstudio.cloud.sap/api/posts');
+        const res = await fetch('http://localhost:8000/api/posts');
         if (!res.ok) {
             throw new Error('Failed to fetch posts');
         }
@@ -31,7 +31,7 @@ async function addPost(e){
     const title = formData.get('title');
 
     try{
-        const res = await fetch('https://port8000-workspaces-ws-k2ntr.us10.trial.applicationstudio.cloud.sap/api/posts',{
+        const res = await fetch('http://localhost:8000/api/posts',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
